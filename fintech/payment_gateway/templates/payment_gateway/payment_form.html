@@ -1,0 +1,23 @@
+<!-- payment_gateway/templates/payment_gateway/payment_form.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Make Payment</title>
+</head>
+<body>
+    <h2>Make Payment</h2>
+    <form method="post" action="{% url 'make_payment' %}">
+        {% csrf_token %}
+        <label for="amount">Amount:</label>
+        <input type="text" name="amount" required>
+        <br>
+        <label for="description">Description:</label>
+        <textarea name="description" required></textarea>
+        <br>
+        <button type="submit">Pay Now</button>
+    </form>
+
+    <p>Need assistance? <a href="{% url 'chat_assistant' %}">Chat with our DreamVesta Assistant</a></p>
+</body>
+</html>

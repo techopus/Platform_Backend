@@ -1,0 +1,18 @@
+<!-- payment_gateway/templates/payment_gateway/chat_form.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat with DreamVesta Assistant</title>
+</head>
+<body>
+    <h2>Chat with DreamVesta Assistant</h2>
+    <form method="post" action="{% url 'chat_assistant' %}">
+        {% csrf_token %}
+        <label for="user_question">Hit Me!:</label>
+        <input type="text" name="user_question" required>
+        <br>
+        <button type="submit">Shoot!</button>
+    </form>
+</body>
+</html>
